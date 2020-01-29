@@ -49,9 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['DB_NAME'] %>
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
-  post: <%= ENV['DB_PORT'] %>
-  host: <%= ENV['DB_HOSTNAME'] %>
+  database: gamepost_production
+  username: gamepost
+  password: <%= ENV['GAMEPOST_DATABASE_PASSWORD'] %>
