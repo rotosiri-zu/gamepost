@@ -66,7 +66,3 @@ gem 'sprockets', '3.7.2'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'devise'
-
-group :production, :staging do
-    gem 'unicorn'
-end

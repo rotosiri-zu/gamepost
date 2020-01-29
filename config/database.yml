@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: gamepost_production
-  username: root
-  password: 
+  username: gamepost
+  password: <%= ENV['GAMEPOST_DATABASE_PASSWORD'] %>
