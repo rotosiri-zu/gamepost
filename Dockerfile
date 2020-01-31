@@ -11,7 +11,7 @@ WORKDIR /myproject
 ADD Gemfile /myproject/Gemfile
 ADD Gemfile.lock /myproject/Gemfile.lock
 
-RUN gem install bundler
+RUN gem install bundler -v 2.0.2
 RUN bundle install
 
 ADD . /myproject
