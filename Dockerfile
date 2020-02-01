@@ -1,20 +1,19 @@
 FROM ruby:2.5.1
 
-RUN apt-get update && \
-    apt-get install -y mysql-client nodejs vim --no-install-recommends && \
-    rm -rf /var/lib/apt/lists/*
+# RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+RUN apt-get update -qq
+RUN apt-get install -y build-essential 
+RUN apt-get install -y libpq-dev
+RUN apt-get install -y nodejs
 
-RUN mkdir /myproject
+# ワーキングディレクトリの設定
+RUN mkdir /myapp
+WORKDIR /myapp
 
-WORKDIR /myproject
+# gemfileを追加する
+ADD Gemfile /myapp/Gemfile
+ADD Gemfile.lock /myapp/Gemfile.lock
 
-ADD Gemfile /myproject/Gemfile
-ADD Gemfile.lock /myproject/Gemfile.lock
-
-RUN gem install bundler
+# gemfileのinstall
 RUN bundle install
-
-ADD . /myproject
-
-RUN mkdir -p tmp/sockets
-
+ADD . /myapp
