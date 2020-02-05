@@ -69,7 +69,7 @@ gem 'kaminari'
 gem 'carrierwave'
 gem 'devise'
 gem 'dotenv-rails'
-gem "fog-aws"
+# gem "fog-aws"
 
 # group :production, :staging do
 #     gem 'unicorn'
