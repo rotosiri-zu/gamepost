@@ -16,5 +16,5 @@ CarrierWave.configure do |config|
 
   config.fog_directory  = 'railspoto'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/railspoto'
-config.cache_storage = :fog
+  config.cache_storage = :fog
 end

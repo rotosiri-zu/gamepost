@@ -67,7 +67,6 @@ gem 'sprockets', '3.7.2'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'devise'
-gem 'fog-aws'
 gem 'dotenv-rails'
 
 # group :production, :staging do
