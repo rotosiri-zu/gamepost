@@ -21,6 +21,7 @@ class ImagesUploader < CarrierWave::Uploader::Base
   def extension_whitelist
     %w(jpg jpeg gif png)
   end
+
   # ここでファイル形式を指定する
   def filename
     original_filename if original_filename
