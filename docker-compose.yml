@@ -5,7 +5,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
-      - "3306:3306"
+      - '5432:5432'
     env_file: db.env
 
   web:
