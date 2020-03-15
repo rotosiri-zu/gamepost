@@ -1,0 +1,15 @@
+current directory: /Users/hijikatahironori/myapp/gamepost/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/hijikatahironori/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200315-50881-1175qnb.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hijikatahironori/myapp/gamepost/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/hijikatahironori/myapp/gamepost/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/hijikatahironori/myapp/gamepost/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20200315-50881-r3mtj4/skiptrace/internal

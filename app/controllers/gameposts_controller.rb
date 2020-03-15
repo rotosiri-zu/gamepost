@@ -1,23 +1,28 @@
 class GamepostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  protect_from_forgery with: :null_session
-
+  
   def index
     @games = Game.all
     @games = Game.order("created_at DESC").page(params[:page]).per(50)
   end
-  
-  def new 
+
+  def new
+    @games = Game.new
   end
 
   def create
-    Game.create(name: game_params[:name], image: game_params[:image], text: 
+    @games = Game.create(name: game_params[:name], image: game_params[:image], text: 
     game_params[:text], platform: game_params[:platform], genre: game_params[:genre], user_id: current_user.id)
+    if @games.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
     @games = Game.find(params[:id])
-  end  
+  end
 
   def destroy
     @games = Game.find(params[:id])
@@ -30,11 +35,15 @@ class GamepostsController < ApplicationController
     @games = Game.find(params[:id])
   end
 
-
   def update
     @games = Game.find(params[:id])
     if @games.user_id == current_user.id
       @games.update(game_params)
+      if @games.save
+        redirect_to root_path
+      else
+        render :edit
+      end
     end  
   end
 
