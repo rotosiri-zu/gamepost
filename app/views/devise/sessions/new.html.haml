@@ -1,5 +1,11 @@
 %h2 Log in
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+  .field
+    = f.label "ニックネーム"
+    %em (7文字まで)
+    %br/
+    = f.text_field :nickname, autofocus:true, maxlength: "7"
   .field
     = f.label :email
     %br/

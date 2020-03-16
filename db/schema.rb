@@ -13,11 +13,11 @@
 ActiveRecord::Schema.define(version: 2020_03_15_141138) do
 
   create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "image", null: false
-    t.text "text", null: false
-    t.string "platform", null: false
-    t.string "genre", null: false
+    t.string "name"
+    t.string "image"
+    t.text "text"
+    t.string "platform"
+    t.string "genre"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "user_id"
