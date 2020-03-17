@@ -319,7 +319,7 @@ header.header {
 .contents-row-h {
   margin-top: 100px;
   .container-h {
-    height: 900px;
+    height: 1100px;
     width: 100%;
     background: grey;
   }
@@ -354,7 +354,7 @@ header.header {
   }
 
   form  {
-    height: 900px;
+    height: 1100px;
     width: 400px;
     margin: 0 auto;
     padding:10px;
@@ -369,9 +369,9 @@ header.header {
 
   .img-g {
     padding-top: 20px;
-    padding-bottom: 30px;
     padding-left: 55px;
     padding-bottom: 20px;
+    width: 330px;
   }
   .gamename {
     padding-bottom: 30px;
@@ -401,11 +401,12 @@ header.header {
 
 li {
   color: red;
+  padding-top: 20px;
 }
 
 .new_user {
   padding-top: 20px;
-  height: 670px;
+  height: 740px;
   width: 600px;
   margin-top: 50px;
   margin-left: 420px;

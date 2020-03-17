@@ -1,22 +1,23 @@
----
 ja:
   activerecord:
-    user:
-      nickname: ニックネーム
-      name: 名前
-      email: メールアドレス
-    game:
-      id: ID
-      image: 画像ファイル
-      name: ゲーム名
-      platform: プラットフォーム
-      genre: ジャンル
-      text: ゲームの説明文
-      create_at: 登録日時
-      update_at: 更新日時
-      user_id: ID
-    review:
-      nickname: ニックネーム
+    models:
+    attributes:
+      user:
+        nickname: ニックネーム
+        name: 名前
+        email: メールアドレス
+      game:
+        id: ID
+        image: 画像ファイル
+        name: ゲーム名
+        platform: プラットフォーム
+        genre: ジャンル
+        text: ゲームの説明文
+        create_at: 登録日時
+        update_at: 更新日時
+        user_id: ID
+      review:
+        nickname: ニックネーム
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
