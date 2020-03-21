@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
-  resources :gameposts
+  resources :gameposts do
   get 'gameposts/:id/destroy' => 'gameposts#destroy'
+    collection do
+      get 'search'
+    end
+  end
   resources :users
   root to: 'gameposts#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
