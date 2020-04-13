@@ -21,8 +21,8 @@ class GamepostsController < ApplicationController
 
   def show
     @games = Game.find(params[:id])
+    @reviews = @games.reviews.order(id: 'DESC')
   end
-
   def destroy
     @games = Game.find(params[:id])
     if @games.user_id == current_user.id
