@@ -1,6 +1,7 @@
 class GamepostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  
+  before_action :set_search
+
   def index
     @games = Game.all
     @games = Game.order("created_at DESC").page(params[:page]).per(50)
@@ -44,6 +45,11 @@ class GamepostsController < ApplicationController
         render :edit
       end
     end  
+  end
+
+  def set_search
+    @search = Game.ransack(params[:q])
+    @search_products = @search.result.page(params[:page])
   end
 
   private
