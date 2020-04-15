@@ -22,7 +22,7 @@ class GamepostsController < ApplicationController
 
   def show
     @games = Game.find(params[:id])
-    @reviews = @games.reviews.order(id: 'DESC')
+    @reviews = Review.order('created_at DESC').limit(10)
   end
   def destroy
     @games = Game.find(params[:id])
