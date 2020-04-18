@@ -5,8 +5,6 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.string :title, null: false
       t.integer :rate, null: false
       t.text :review, null: false
-      t.integer :user_id
-      t.integer :gamepost_id
       t.timestamps
     end
   end

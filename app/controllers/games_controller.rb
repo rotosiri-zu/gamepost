@@ -1,4 +1,4 @@
-class GamepostsController < ApplicationController
+class GamesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   before_action :set_search
 
