@@ -625,8 +625,18 @@ padding-right: 10px;
         height: 31px;
         .profile-nickname {
           padding-bottom: 10px;
+          font-size: 20px;
         }
       }
+    }
+    .h-letter-space {
+      padding-left: 10px;
+      font-size: 20px;
+    }
+    .reviewtext {
+      padding-top: 10px;
+      width: 680px;
+      height: 90px;
     }
   }
 }

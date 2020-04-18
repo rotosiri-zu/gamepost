@@ -12,7 +12,7 @@
       = f.label :title, style: { 'margin-right' => 10 }
       = f.text_field :title, placeholder: 'タイトル', value: ''
     .review-text
-      = f.text_area :review, placeholder: 'ゲームの感想をお書き下さい。', style: 'width: 25%; height: 150px; border: 2px solid skyblue;'
+      = f.text_area :review, placeholder: 'ゲームの感想をお書き下さい。', style: 'width: 25%; height: 150px; border: 2px solid skyblue;', wrap: 'hard'
     .row
       .col10.push1
         = button_tag type: "submit", class: "btn btn--block" do

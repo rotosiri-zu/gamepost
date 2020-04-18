@@ -45,4 +45,10 @@
                 readOnly: true,
                 score: '#{review.rate}',
               });
-
+            %span.h-letter-space
+              = review.title
+            %p 
+              = review.created_at.to_s(:datetime_jp)
+          .reviewtext
+            %span
+              = review.review
