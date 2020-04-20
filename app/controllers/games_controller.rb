@@ -24,6 +24,7 @@ class GamesController < ApplicationController
     @games = Game.find(params[:id])
     @reviews = Review.order('created_at DESC').limit(10)
   end
+  
   def destroy
     @games = Game.find(params[:id])
     if @games.user_id == current_user.id

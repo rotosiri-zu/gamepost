@@ -36,8 +36,6 @@ ActiveRecord::Schema.define(version: 2020_04_18_173740) do
     t.string "title", null: false
     t.integer "rate", null: false
     t.text "review", null: false
-    t.integer "user_id"
-    t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
