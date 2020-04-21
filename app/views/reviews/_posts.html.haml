@@ -1,0 +1,28 @@
+.content-box3
+  %h4 レビュー一覧
+  .h-row
+    - if @reviews
+      - @reviews.each do |review|
+        .a-row
+          .review-content
+            %span.profile-nickname
+              = review.nickname
+          .g-row
+            %i{:id => "star-rate-#{review.id}"}
+            :javascript
+              $('#star-rate-#{review.id}').raty({
+                size: 36,
+                starOff:  '#{asset_path('star-off.png')}',
+                starOn : '#{asset_path('star-on.png')}',
+                starHalf: '#{asset_path('star-half.png')}',
+                half: true,
+                readOnly: true,
+                score: '#{review.rate}',
+              });
+            %span.h-letter-space
+              = review.title
+            %p 
+              = review.created_at.to_s(:datetime_jp)
+          .reviewtext
+            %span
+              = review.review
