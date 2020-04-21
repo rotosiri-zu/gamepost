@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   before_action :set_search
+  before_action :set_game, only: %i[show destroy edit update]
 
   def index
     @games = Game.all
@@ -21,23 +22,19 @@ class GamesController < ApplicationController
   end
 
   def show
-    @games = Game.find(params[:id])
     @reviews = Review.includes(:user, :game).where(game_id: @games.id).page(params[:page])
   end
   
   def destroy
-    @games = Game.find(params[:id])
     if @games.user_id == current_user.id
       @games.destroy
     end  
   end
 
   def edit
-    @games = Game.find(params[:id])
   end
 
   def update
-    @games = Game.find(params[:id])
     if @games.user_id == current_user.id
       @games.update(set_game)
       if @games.save
@@ -61,6 +58,10 @@ class GamesController < ApplicationController
 
   def set_game
     params.permit(:image, :name, :platform, :genre, :text)
+  end
+
+  def set_game
+    @games = Game.find(params[:id])
   end
 
   def move_to_index 
