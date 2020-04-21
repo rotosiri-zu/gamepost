@@ -15,8 +15,7 @@
             %th.game-text ゲームの説明文
             %td.text-description= @games.text
       .item-imges
-        %img.content_post{:src => "#{@games.image}"}/
-      = link_to 'レビュー投稿画面', '/games/:game_id/reviews/new', class: 'reviewpostingscreen'
+        %img.content_post{:src => "#{@games.image}"}
 
 - if user_signed_in? && current_user.id == @games.user_id
   .container-box2

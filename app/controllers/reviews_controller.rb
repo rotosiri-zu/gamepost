@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: :new
 
   def new
-    @reviews = Review.new
   end
   
   def create
@@ -16,7 +15,7 @@ class ReviewsController < ApplicationController
 
   private
   def create_params
-    params.require(:review).permit(:nickname, :rate, :title, :review).merge(user_id: current_user.id)
+    params.require(:review).permit(:nickname, :rate, :title, :review).merge(game_id: params[:game_id], user_id: current_user.id)
   end
 
 end

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   }
   resources :games do
     resources :reviews, only: [:new, :create]
-   end
+  end
    get 'games/:id/destroy' => 'games#destroy'
    resources :users
    root to: 'games#index'
