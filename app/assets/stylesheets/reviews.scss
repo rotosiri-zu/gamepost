@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.notification {
+  margin-top: 100px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  font-family: "SoukouMincho";
+}
 .review {
   .review-h {
     font-size: 30px;

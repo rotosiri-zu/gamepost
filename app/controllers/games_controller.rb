@@ -22,7 +22,8 @@ class GamesController < ApplicationController
   end
 
   def show
-    @reviews = Review.includes(:user, :game).where(game_id: @games.id).page(params[:page])
+    @reviews = @games.reviews.order('created_at DESC').limit(10).page(params[:page]).per(24)
+    @review = @games.reviews.build
   end
   
   def destroy

@@ -1,3 +1,5 @@
+.notification
+  = flash[:danger]
 %section.product-container
   .container-box
     %h1.item-name
@@ -16,7 +18,6 @@
             %td.text-description= @games.text
       .item-imges
         %img.content_post{:src => "#{@games.image}"}
-
 - if user_signed_in? && current_user.id == @games.user_id
   .container-box2
     .item-box
