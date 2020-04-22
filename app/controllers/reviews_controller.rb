@@ -4,7 +4,8 @@ class ReviewsController < ApplicationController
   def create
     @reviews = Review.create(create_params)
     if @reviews.save
-      redirect_to root_path, notice: 'レビューの投稿に成功しました！'
+      flash[:success] = 'レビューを投稿しました'
+      redirect_to root_path
     else
       flash[:danger] = 'レビューの投稿に失敗しました、ニックネーム、タイトル、レビューを記入したか確認してください'
       redirect_back(fallback_location: root_path)
@@ -17,9 +18,16 @@ class ReviewsController < ApplicationController
 
   def edit
   end
-  
-  def update
 
+  def update
+    @reviews = Review.update(create_params)
+    if @reviews.save
+      flash[:success] = 'レビューを更新しました'
+      redirect_back(fallback_location: root_path)
+    else
+      flash[:danger] = 'レビューの編集に失敗しました'
+      render :edit
+    end
   end
 
   private
