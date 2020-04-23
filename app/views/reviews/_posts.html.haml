@@ -26,3 +26,6 @@
           .reviewtext
             %span
               = review.review
+          .reviewedit
+            - if user_signed_in? && current_user == @games.user
+              = link_to 'レビューを削除', game_review_path(@reviews), method: :delete

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   resources :games do
-    resources :reviews, only: [:new, :create]
+    resources :reviews
   end
    get 'games/:id/destroy' => 'games#destroy'
    resources :users

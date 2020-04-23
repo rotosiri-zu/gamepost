@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: :new
-
+ 
   def create
     @reviews = Review.create(create_params)
     if @reviews.save
@@ -13,21 +12,9 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @reviews = Review.find(params[:id]).destroy
-  end
-
-  def edit
-  end
-
-  def update
-    @reviews = Review.update(create_params)
-    if @reviews.save
-      flash[:success] = 'レビューを更新しました'
-      redirect_back(fallback_location: root_path)
-    else
-      flash[:danger] = 'レビューの編集に失敗しました'
-      render :edit
-    end
+    @reviews = Review.find_by(params[:id]).destroy
+    flash[:danger] = 'レビューを削除しました'
+    redirect_back(fallback_location: root_path)
   end
 
   private
