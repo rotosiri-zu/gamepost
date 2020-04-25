@@ -1,4 +1,4 @@
-class PlatformgenreController < ApplicationController
+class SocialgameController < ApplicationController
   def index
   end
 

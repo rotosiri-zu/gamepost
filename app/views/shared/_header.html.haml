@@ -12,11 +12,11 @@
           %li.nav_menu_li 
             = link_to "\uf015　ホーム", root_path, class: 'fa'
           %li.nav_menu_li
-            = link_to "" 
+            = link_to "テレビゲーム" 
           %li.nav_menu_li
-            = link_to "" 
+            = link_to "PCゲーム" 
           %li.nav_menu_li
-            = link_to "" 
+            = link_to "ソーシャルゲーム" 
       .form-group
         = search_form_for @search, url: games_path do |f|
           = f.text_field :name_cont ,placeholder: '検索するテキストを入力...'

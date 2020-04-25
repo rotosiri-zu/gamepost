@@ -1,19 +1,16 @@
 Rails.application.routes.draw do
-  get 'platformgenre/index'
-  get 'platformgenre/show'
-  get 'platformgenre/destroy'
-  get 'platformgenre/edit'
-  get 'platformgenre/update'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
   resources :games do
     resources :reviews
+    resources :videogames
+    resources :pcgame
+    resources :socialgame
   end
    get 'games/:id/destroy' => 'games#destroy'
    resources :users
-   resources :platformgenre
-   root to: 'games#index'
    get 'users/users/:id' => 'users#listofposts'
+   root to: 'games#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
