@@ -1,5 +1,6 @@
 class PcgameController < ApplicationController
   def index
+    @games = Game.where(params[:id])
   end
 
   def show
