@@ -12,11 +12,11 @@
           %li.nav_menu_li 
             = link_to "\uf015　ホーム", root_path, class: 'fa'
           %li.nav_menu_li
-            = link_to "テレビゲーム", game_videogames_path(@games), class: 'fa'
+            = link_to "テレビゲーム", videogames_path, class: 'fa'
           %li.nav_menu_li
-            = link_to "PCゲーム", game_pcgame_index_path(@games), class: 'fa'
+            = link_to "PCゲーム", pcgame_index_path, class: 'fa'
           %li.nav_menu_li
-            = link_to "ソーシャルゲーム", game_socialgame_index_path(@games), class: 'fa'
+            = link_to "ソーシャルゲーム", socialgame_index_path, class: 'fa'
       .form-group
         = search_form_for @search, url: games_path do |f|
           = f.text_field :name_cont ,placeholder: '検索するテキストを入力...'
